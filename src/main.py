@@ -8,6 +8,7 @@ from data.filamentos import filamentos_metalicos
 from modulos.modulo4 import generar_conclusion_filamento, modelo_grand_prix
 from modulos.modulo6 import huella_ecologica
 from modulos.modulo7b import evaluacion_nom_035
+from modulos.modulo8 import comparar_metodos_mcdm
 from modulos.modulo9 import mostrar_libro
 
 def limpiar_pantalla():
@@ -27,7 +28,8 @@ Bienvenido al sistema de gestión de filamentos de metal.
 8. Modelo Grand Prix.
 9. Calcular huella ecológica.
 10. Factores Psicosociales en Fabricación Aditiva
-11. Mostrar libro PDF
+11. Comparar metodos MCDM
+12. Mostrar libro PDF
 0. Salir del sistema.
     """)
 
@@ -35,7 +37,7 @@ if __name__ == "__main__":
     while True:
         menu_principal()
         try:
-            opcion = int(input(f"Selecciona una opción (0-11): "))
+            opcion = int(input(f"Selecciona una opción (0-12): "))
         except ValueError:
             print("Debes ingresar un número válido.")
             time.sleep(2)
@@ -53,7 +55,8 @@ if __name__ == "__main__":
             8: lambda: modelo_grand_prix(),
             9: lambda: huella_ecologica(),
             10: lambda: evaluacion_nom_035(),
-            11: lambda: mostrar_libro(),
+            11: lambda: comparar_metodos_mcdm(filamentos_metalicos),
+            12: lambda: mostrar_libro(),
             0: exit
         }
         
