@@ -18,7 +18,6 @@ def comparar_metodos_mcdm (filamentos_metalicos):
     def calcular_moora():
         matriz_normalizada = []
         
-        # Normalización
         for i in range(len(alternativas)):
             fila = []
             for j in range(len(criterios)):
@@ -26,7 +25,6 @@ def comparar_metodos_mcdm (filamentos_metalicos):
                 fila.append((valores[i][j] / suma_cuadrados) * pesos_moora[j])
             matriz_normalizada.append(fila)
         
-        # Cálculo MOORA
         resultados = []
         for i in range(len(alternativas)):
             positivo = sum(matriz_normalizada[i][j] for j in range(len(criterios)) if j not in [2, 7, 8])
@@ -150,7 +148,6 @@ def comparar_metodos_mcdm (filamentos_metalicos):
         ranking_moora = {alt: i+1 for i, alt in enumerate(alternativas_ordenadas_moora)}
         ranking_vikor = {alt: i+1 for i, alt in enumerate(alternativas_ordenadas_vikor)}
         
-        # Mostrar tabla
         print("\n\nTABLA COMPARATIVA DE RANKINGS")
         print("=" * 56)
         print(f"{'Alternativa':<35} {'AHP':<6} {'MOORA':<6} {'VIKOR':<6}")
