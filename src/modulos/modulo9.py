@@ -12,7 +12,7 @@ def mostrar_libro():
     ctk.set_default_color_theme("dark-blue")
     
     def handle_button():
-        pdf_file = Path(__file__).parent.parent / "data" / "libro.pdf"
+        pdf_file = Path(__file__).parent.parent / "data" / "Analisis_MCDM_Filamentos3D_HMI_Submarino.pdf"
         
         if not pdf_file.exists():
             print(f"Error: No se encuentra el archivo en {pdf_file}")
